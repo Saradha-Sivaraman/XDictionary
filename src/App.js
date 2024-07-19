@@ -21,40 +21,29 @@ function App() {
 ];
 
    function getMeaning(event)
+   {   
+            dictionary.forEach(function(eleData) {
+            word = eleData.word
 
+          if (searchWord.toLowerCase()===word.toLowerCase()) {
+            isError="true"
+            meaning = eleData.meaning
+            setIsError(true);
+          // setResponse(meaning);
+            console.log("response"+meaning);
+        
+          }
 
-   {    event.preventDefault();
-     
-     dictionary.forEach(function(eleData) {
-
-     
-   
-     word = eleData.word
-
-       if (searchWord.toLowerCase()===word.toLowerCase()) {
-        isError="true"
-        meaning = eleData.meaning
-        setIsError(true);
-       // setResponse(meaning);
-         console.log("response"+meaning);
-     
-       }
-
-       if(isError)
-        { 
-          setResponse(meaning);
-        }
-        else
-        {console.log("inside  else1");
-        console.log(isError);
-          setResponse("Word not found in the dictionary.");
-        }
-       
-
-     
-     
-      
-   
+          if(isError)
+            { 
+              setResponse(meaning);
+            }
+            else
+            {console.log("inside  else1");
+            console.log(isError);
+              setResponse("Word not found in the dictionary.");
+            }
+        
      })
     
 
