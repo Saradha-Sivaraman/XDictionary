@@ -54,6 +54,7 @@ function App() {
   return (
     <div >
       <div>
+        <h1>Dictionary App</h1>
        <input type="text" id="searchword"
                     placeholder="search for a word"
                     value={searchWord} onChange={(event)=>setsearchWord(event.target.value)}
