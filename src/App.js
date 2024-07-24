@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 function App() {
 
+  
+
   const [searchWord, setsearchWord] = useState("");
   const [response,setResponse] = useState("");
   let [isError,setIsError] = useState(false);
@@ -21,7 +23,7 @@ function App() {
 ];
 
    function getMeaning(event)
-   {   
+   {   event.preventDefault();
             dictionary.forEach(function(eleData) {
             word = eleData.word
 
@@ -52,24 +54,28 @@ function App() {
      
    }
   return (
-    
-      <div>
+    <div >
+      
         <h1>Dictionary App</h1>
-       <form>
-        <input type="text" id="searchword"
-                    placeholder="Search for a word"
+        <form>
+       <input type="text" id="Searchword"
+                    placeholder="search for a word"
                     value={searchWord} onChange={(event)=>setsearchWord(event.target.value)}
                     />
-       <button type="submit"  onClick={() => {
-            getMeaning();
-          }}>Search</button>
-          </form>
-          
-          
+       <button type="submit"  onClick={(e) =>
+            //getMeaning(event);
+            getMeaning(e)
+       }>Search</button>
+         </form>
+         
           <h3>Definition:</h3>
            
-            <p>{response} </p>
+            {response} 
 
+{/* {isError? (<div><h3>Definition:{response} </h3></div>) : (<div><h3>Definition:"Word not found in the dictionary."</h3></div>)
+}     */}
+   
+     
      </div>
      
      
