@@ -52,27 +52,28 @@ function App() {
      
    }
   return (
-    <div >
+    
       <div>
         <h1>Dictionary App</h1>
-       <input type="text" id="searchword"
-                    placeholder="search for a word"
+       <form>
+        <input type="text" id="searchword"
+                    placeholder="Search for a word"
                     value={searchWord} onChange={(event)=>setsearchWord(event.target.value)}
                     />
        <button type="submit"  onClick={() => {
             getMeaning();
           }}>Search</button>
-           {<div><h3>Definition:</h3>
-            {response}</div> } 
+          </form>
+          
+          
+          <h3>Definition:</h3>
+           
+            <p>{response} </p>
 
-{/* {isError? (<div><h3>Definition:{response} </h3></div>) : (<div><h3>Definition:"Word not found in the dictionary."</h3></div>)
-}     */}
-   
-     
      </div>
      
      
-    </div>
+    
   );
 }
 
