@@ -62,15 +62,13 @@ function App() {
                     placeholder="search for a word"
                     value={searchWord} onChange={(event)=>setsearchWord(event.target.value)}
                     />
-       <button type="submit"  onClick={(e) =>
-            //getMeaning(event);
-            getMeaning(e)
+       <button type="submit"  onClick={(e) => getMeaning(e)
        }>Search</button>
          </form>
          
           <h3>Definition:</h3>
            
-            {response} 
+            <p>{response} </p>
 
 {/* {isError? (<div><h3>Definition:{response} </h3></div>) : (<div><h3>Definition:"Word not found in the dictionary."</h3></div>)
 }     */}
